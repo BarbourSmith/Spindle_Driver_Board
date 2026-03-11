@@ -26,8 +26,7 @@
       "ioValues": [
         {
           "name": "diameter",
-          "ioValue": 12,
-          "currentEquation": "12"
+          "ioValue": 12
         }
       ]
     },
@@ -56,8 +55,7 @@
         },
         {
           "name": "height",
-          "ioValue": 1,
-          "currentEquation": "1"
+          "ioValue": 1
         }
       ]
     },
@@ -106,195 +104,13 @@
         },
         {
           "name": "yDist",
-          "ioValue": 12.5,
-          "currentEquation": "12.5"
+          "ioValue": 12.5
         },
         {
           "name": "zDist",
           "ioValue": 0
         }
       ]
-    },
-    {
-      "atomType": "GitHubMolecule",
-      "x": 0.3835978835978836,
-      "y": 0.7138888888888889,
-      "uniqueID": "id-40",
-      "name": "RotatePattern",
-      "ioValues": [
-        {
-          "name": "Number",
-          "ioValue": 4,
-          "currentEquation": "4"
-        },
-        {
-          "name": "Angle",
-          "ioValue": 60,
-          "currentEquation": "60"
-        }
-      ],
-      "topLevel": false,
-      "allAtoms": [
-        {
-          "atomType": "Output",
-          "x": 0.98,
-          "y": 0.5,
-          "uniqueID": "id-32",
-          "ioValues": [
-            {
-              "name": "number or geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            }
-          ]
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.15384615384615385,
-          "uniqueID": "id-33",
-          "name": "Shape"
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.24615384615384617,
-          "uniqueID": "id-34",
-          "name": "Number"
-        },
-        {
-          "atomType": "Input",
-          "x": 0.025384615384615384,
-          "y": 0.3384615384615385,
-          "uniqueID": "id-35",
-          "name": "Angle"
-        },
-        {
-          "atomType": "Circle",
-          "x": 0.19136960600375233,
-          "y": 0.20055710306406688,
-          "uniqueID": "id-36",
-          "ioValues": [
-            {
-              "name": "diameter",
-              "ioValue": 10
-            }
-          ]
-        },
-        {
-          "atomType": "Move",
-          "x": 0.2786116322701689,
-          "y": 0.36490250696378834,
-          "uniqueID": "id-37",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "xDist",
-              "ioValue": 100
-            },
-            {
-              "name": "yDist",
-              "ioValue": 0
-            },
-            {
-              "name": "zDist",
-              "ioValue": 0
-            }
-          ]
-        },
-        {
-          "atomType": "Code",
-          "x": 0.5741525423728814,
-          "y": 0.6072423398328691,
-          "uniqueID": "id-38",
-          "ioValues": [
-            {
-              "name": "Number",
-              "ioValue": 4
-            },
-            {
-              "name": "Angle",
-              "ioValue": 60
-            }
-          ],
-          "codeVersion": 1,
-          "code": "//Inputs:[Shape, Number, Angle];\n\n\nlet shapesArray = [];\nfor (let i = 0; i < Number; i++) {\n    let rotatedShape = await Rotate(Shape, 0, 0, Angle * i);\n    shapesArray.push(rotatedShape);\n}\n\nlet assembledShape = await Assembly(shapesArray)\n\nreturn assembledShape;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**\n    To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n    If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n    Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n    https://replicad.xyz/docs/introapp/UserGuide.html \n    Return a replicad object that includes geometry, color, tags and plane. \n\n\n    Example Code Atom:\n\n      Inputs:[shape, x];\n\n      let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n\n      return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n\n      - See more examples at _______ \n\n\n    */\n"
-        },
-        {
-          "atomType": "Extrude",
-          "x": 0.4586864406779661,
-          "y": 0.2618384401114206,
-          "uniqueID": "id-39",
-          "ioValues": [
-            {
-              "name": "geometry",
-              "ioValue": "__GEOMETRY_INPUT__"
-            },
-            {
-              "name": "height",
-              "ioValue": 10
-            }
-          ]
-        }
-      ],
-      "allConnectors": [
-        {
-          "ap2Name": "Shape",
-          "ap1ID": "id-33",
-          "ap2ID": "id-38"
-        },
-        {
-          "ap2Name": "Number",
-          "ap1ID": "id-34",
-          "ap2ID": "id-38"
-        },
-        {
-          "ap2Name": "Angle",
-          "ap1ID": "id-35",
-          "ap2ID": "id-38"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-36",
-          "ap2ID": "id-37"
-        },
-        {
-          "ap2Name": "geometry",
-          "ap1ID": "id-37",
-          "ap2ID": "id-39"
-        },
-        {
-          "ap2Name": "number or geometry",
-          "ap1ID": "id-38",
-          "ap2ID": "id-32"
-        }
-      ],
-      "parentRepo": {
-        "lastFoundGit": "2026-03-10T02:23:39.183Z",
-        "repoName": "RotatePattern",
-        "dateCreated": "2024-10-01T18:14:59Z",
-        "likes": 0,
-        "readMe": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/README.md?sanitize=true",
-        "yyyy": 2024,
-        "topMoleculeID": 1727806499549,
-        "githubMoleculesUsed": [],
-        "html_url": "https://github.com/BarbourSmith/RotatePattern",
-        "topics": [],
-        "parentRepo": null,
-        "forks": 0,
-        "dateModified": "739160",
-        "ranking": 18.6,
-        "searchField": "rotatepattern barboursmith",
-        "owner": "BarbourSmith",
-        "description": "",
-        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/project.abundance?sanitize=true",
-        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/project.svg?sanitize=true",
-        "isLocal": false
-      },
-      "unitsKey": "Inches",
-      "fileTypeVersion": 1
     },
     {
       "atomType": "Fusion",
@@ -307,7 +123,7 @@
           "ioValue": {
             "geometry": [
               {
-                "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-8",
+                "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-8",
                 "dimension": "2D",
                 "tags": [],
                 "plane": {
@@ -331,7 +147,7 @@
                 "bom": []
               },
               {
-                "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-9",
+                "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-9",
                 "dimension": "2D",
                 "tags": [],
                 "plane": {
@@ -355,7 +171,7 @@
                 "bom": []
               },
               {
-                "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-10",
+                "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-10",
                 "dimension": "2D",
                 "tags": [],
                 "plane": {
@@ -379,7 +195,7 @@
                 "bom": []
               },
               {
-                "geometry": "5ea22352-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-4-60-11",
+                "geometry": "5ea22352-4-60-{\"geometry\":\"move-circle-1.6-0-12.5-0\",\"dimension\":\"2D\",\"tags\":[],\"plane\":{\"origin\":[0,0,0],\"xDir\":[1,0,0],\"normal\":[0,0,1]},\"color\":\"#aad7f2\",\"bom\":[]}-11",
                 "dimension": "2D",
                 "tags": [],
                 "plane": {
@@ -496,6 +312,189 @@
         "costUSD": 35,
         "source": ""
       }
+    },
+    {
+      "atomType": "GitHubMolecule",
+      "x": 0.3835978835978836,
+      "y": 0.7138888888888889,
+      "uniqueID": "id-40",
+      "name": "RotatePattern",
+      "ioValues": [
+        {
+          "name": "Number",
+          "ioValue": 4
+        },
+        {
+          "name": "Angle",
+          "ioValue": 60
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 0.98,
+          "y": 0.5,
+          "uniqueID": "id-32",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.15384615384615385,
+          "uniqueID": "id-33",
+          "name": "Shape"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.24615384615384617,
+          "uniqueID": "id-34",
+          "name": "Number"
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.3384615384615385,
+          "uniqueID": "id-35",
+          "name": "Angle"
+        },
+        {
+          "atomType": "Circle",
+          "x": 0.19136960600375233,
+          "y": 0.20055710306406688,
+          "uniqueID": "id-36",
+          "ioValues": [
+            {
+              "name": "diameter",
+              "ioValue": 10
+            }
+          ]
+        },
+        {
+          "atomType": "Move",
+          "x": 0.2786116322701689,
+          "y": 0.36490250696378834,
+          "uniqueID": "id-37",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "xDist",
+              "ioValue": 100
+            },
+            {
+              "name": "yDist",
+              "ioValue": 0
+            },
+            {
+              "name": "zDist",
+              "ioValue": 0
+            }
+          ]
+        },
+        {
+          "atomType": "Code",
+          "x": 0.5741525423728814,
+          "y": 0.6072423398328691,
+          "uniqueID": "id-38",
+          "ioValues": [
+            {
+              "name": "Number",
+              "ioValue": 4
+            },
+            {
+              "name": "Angle",
+              "ioValue": 60
+            },
+            {
+              "name": "Shape",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "codeVersion": 1,
+          "code": "//Inputs:[Shape, Number, Angle];\n\n\nlet shapesArray = [];\nfor (let i = 0; i < Number; i++) {\n    let rotatedShape = await Rotate(Shape, 0, 0, Angle * i);\n    shapesArray.push(rotatedShape);\n}\n\nlet assembledShape = await Assembly(shapesArray)\n\nreturn assembledShape;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /**\n    To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n    If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n    Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n    https://replicad.xyz/docs/introapp/UserGuide.html \n    Return a replicad object that includes geometry, color, tags and plane. \n\n\n    Example Code Atom:\n\n      Inputs:[shape, x];\n\n      let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n\n      return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n\n      - See more examples at _______ \n\n\n    */\n"
+        },
+        {
+          "atomType": "Extrude",
+          "x": 0.4586864406779661,
+          "y": 0.2618384401114206,
+          "uniqueID": "id-39",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "height",
+              "ioValue": 10
+            }
+          ]
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "Shape",
+          "ap1ID": "id-33",
+          "ap2ID": "id-38"
+        },
+        {
+          "ap2Name": "Number",
+          "ap1ID": "id-34",
+          "ap2ID": "id-38"
+        },
+        {
+          "ap2Name": "Angle",
+          "ap1ID": "id-35",
+          "ap2ID": "id-38"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-36",
+          "ap2ID": "id-37"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-37",
+          "ap2ID": "id-39"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-38",
+          "ap2ID": "id-32"
+        }
+      ],
+      "parentRepo": {
+        "lastFoundGit": "2026-03-10T02:23:39.183Z",
+        "repoName": "RotatePattern",
+        "dateCreated": "2024-10-01T18:14:59Z",
+        "likes": 0,
+        "readMe": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/README.md?sanitize=true",
+        "yyyy": 2024,
+        "topMoleculeID": 1727806499549,
+        "githubMoleculesUsed": [],
+        "html_url": "https://github.com/BarbourSmith/RotatePattern",
+        "topics": [],
+        "parentRepo": null,
+        "forks": 0,
+        "dateModified": "739160",
+        "ranking": 18.6,
+        "searchField": "rotatepattern barboursmith",
+        "owner": "BarbourSmith",
+        "description": "",
+        "contentURL": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/project.abundance?sanitize=true",
+        "svgURL": "https://raw.githubusercontent.com/BarbourSmith/RotatePattern/master/project.svg?sanitize=true",
+        "isLocal": false
+      },
+      "unitsKey": "Inches",
+      "fileTypeVersion": 1
     }
   ],
   "allConnectors": [
@@ -530,11 +529,6 @@
       "ap2ID": "id-40"
     },
     {
-      "ap2Name": "Shape 1",
-      "ap1ID": "id-40",
-      "ap2ID": "id-65"
-    },
-    {
       "ap2Name": "geometry",
       "ap1ID": "id-65",
       "ap2ID": "id-74"
@@ -553,6 +547,11 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-82",
       "ap2ID": "id-2"
+    },
+    {
+      "ap2Name": "Shape 1",
+      "ap1ID": "id-40",
+      "ap2ID": "id-65"
     }
   ],
   "unitsKey": "MM",
