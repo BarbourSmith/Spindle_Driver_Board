@@ -264,8 +264,8 @@
     },
     {
       "atomType": "Difference",
-      "x": 0.6051587301587301,
-      "y": 0.4735376044568245,
+      "x": 0.6065693430656934,
+      "y": 0.4874651810584958,
       "uniqueID": "id-78",
       "ioValues": [
         {
@@ -323,7 +323,7 @@
         {
           "name": "Shape 2",
           "ioValue": {
-            "geometry": "cut-intersect-move-cut-circle-42.5-circle-32.5-0--37.5-0-circle-66.5-move-rectangle-500-500--250-0-0",
+            "geometry": "cut-intersect-move-cut-circle-47-circle-27-0--42-0-circle-66.5-move-rectangle-500-500--250-0-0",
             "tags": [],
             "color": "#aad7f2",
             "plane": {
@@ -477,6 +477,10 @@
             {
               "name": "Angle",
               "ioValue": 60
+            },
+            {
+              "name": "Shape",
+              "ioValue": "__GEOMETRY_INPUT__"
             }
           ],
           "codeVersion": 1,
@@ -565,7 +569,12 @@
       "ioValues": [
         {
           "name": "Radius",
-          "ioValue": 85
+          "ioValue": 94
+        },
+        {
+          "name": "Thickness",
+          "ioValue": 40,
+          "currentEquation": "40"
         }
       ],
       "topLevel": false,
@@ -598,7 +607,7 @@
             },
             {
               "name": "yDist",
-              "ioValue": -37.5
+              "ioValue": -42
             },
             {
               "name": "zDist",
@@ -699,46 +708,50 @@
         },
         {
           "atomType": "Equation",
-          "x": 0.16203703703703703,
-          "y": 0.5626740947075208,
+          "x": 0.1854014598540146,
+          "y": 0.44011142061281333,
           "uniqueID": "id-223",
-          "name": "R-20",
+          "name": "R-T",
           "ioValues": [
             {
               "name": "R",
-              "ioValue": 85
+              "ioValue": 94
+            },
+            {
+              "name": "T",
+              "ioValue": 40
             }
           ],
-          "currentEquation": "R-20"
+          "currentEquation": "R-T"
         },
         {
           "atomType": "Equation",
-          "x": 0.25462962962962965,
-          "y": 0.8245125348189415,
+          "x": 0.1686131386861314,
+          "y": 0.8802228412256267,
           "uniqueID": "id-228",
           "name": "R/-2 + 5",
           "ioValues": [
             {
               "name": "R",
-              "ioValue": 85
+              "ioValue": 94
             }
           ],
           "currentEquation": "R/-2 + 5"
         },
         {
           "atomType": "GitHubMolecule",
-          "x": 0.27050264550264547,
-          "y": 0.22005571030640667,
+          "x": 0.27956204379562044,
+          "y": 0.25348189415041783,
           "uniqueID": "id-163",
           "name": "Concentric_Circles",
           "ioValues": [
             {
               "name": "OD",
-              "ioValue": 85
+              "ioValue": 94
             },
             {
               "name": "ID",
-              "ioValue": 65
+              "ioValue": 54
             }
           ],
           "topLevel": false,
@@ -779,7 +792,7 @@
               "ioValues": [
                 {
                   "name": "diameter",
-                  "ioValue": 85
+                  "ioValue": 94
                 }
               ]
             },
@@ -791,7 +804,7 @@
               "ioValues": [
                 {
                   "name": "diameter",
-                  "ioValue": 65
+                  "ioValue": 54
                 }
               ]
             },
@@ -864,6 +877,13 @@
           },
           "unitsKey": "Unitless",
           "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Input",
+          "x": 0.025384615384615384,
+          "y": 0.36211699164345407,
+          "uniqueID": "id-531",
+          "name": "Thickness"
         }
       ],
       "allConnectors": [
@@ -926,14 +946,19 @@
           "ap2Name": "geometry",
           "ap1ID": "id-163",
           "ap2ID": "id-179"
+        },
+        {
+          "ap2Name": "T",
+          "ap1ID": "id-531",
+          "ap2ID": "id-223"
         }
       ],
       "fileTypeVersion": 1
     },
     {
       "atomType": "Molecule",
-      "x": 0.7380952380952381,
-      "y": 0.36490250696378834,
+      "x": 0.7357664233576642,
+      "y": 0.37047353760445684,
       "uniqueID": "id-338",
       "name": "Fillet",
       "ioValues": [
@@ -972,13 +997,11 @@
           "ioValues": [
             {
               "name": "x length",
-              "ioValue": 100,
-              "currentEquation": "100"
+              "ioValue": 100
             },
             {
               "name": "y length",
-              "ioValue": 100,
-              "currentEquation": "100"
+              "ioValue": 100
             }
           ]
         },
